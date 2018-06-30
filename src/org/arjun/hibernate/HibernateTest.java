@@ -14,41 +14,33 @@ public class HibernateTest {
 		//first we need to inistiate the Data Transfer Object to create data
 		
 		UserDetails user = new UserDetails();
-		
-		user.setUserId(1);
+		//user.setUserId(1);
 		user.setUserName("Arjun Rao");
-		user.setAddress("My home address");
+		UserDetails user2 = new UserDetails();
+		user2.setUserName("siddharth");
+		/*user.setAddress("My home address");
 		user.setJoinDate(new Date());
 		user.setDescription("Description of the user goes hear");
 		
-	
+	*/
 		
-		//now we need to save this user object to hibernate, using hibernate api, for this we need a session factory object
-		//this session factory is defined in hibernate.cfg.xml 
-		//sessionfactory object should be created just one for applicaiton and then for each time hiberante is acesses, we need to obtain a 
-		//session objet and open a transaction
 		
 		SessionFactory sessionFactory= new Configuration().configure().buildSessionFactory();		
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		session.save(user);
+		session.save(user2);
 		
 		session.getTransaction().commit();
 		session.close();
 		
-		user = null;
-		
-		//this this point we have created a modle object and populated it and saved it in
-		//postgres database
-		//now lets retrieve that object back form database
-		
+		/*user = null;
 		session = sessionFactory.openSession();
 		session.beginTransaction();
 		user = (UserDetails)session.get(UserDetails.class, 1);
-		//now we got the object
 		System.out.println("The object retrieved from the database is "+user.getUserName());
 		
-		
+		*/
 		
 	}
 

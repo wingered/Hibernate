@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.Temporal;
@@ -13,40 +14,29 @@ import javax.persistence.Transient;
 
 @Entity
 public class UserDetails {
-
 	@Id
+	@GeneratedValue //this is a seroigate key, which is just there to track a primary key not of any business value.
 	private int userId;
 	private String userName;
 
-	private Date joinDate;
-	private String address;
-
-	private String description;
-
-	public Date getJoinDate() {
-		return joinDate;
-	}
-
-	public void setJoinDate(Date joinDate) {
-		this.joinDate = joinDate;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
+	/*
+	 * private Date joinDate; private String address;
+	 * 
+	 * private String description;
+	 * 
+	 * public Date getJoinDate() { return joinDate; }
+	 * 
+	 * public void setJoinDate(Date joinDate) { this.joinDate = joinDate; }
+	 * 
+	 * public String getAddress() { return address; }
+	 * 
+	 * public void setAddress(String address) { this.address = address; }
+	 * 
+	 * public String getDescription() { return description; }
+	 * 
+	 * public void setDescription(String description) { this.description =
+	 * description; }
+	 */
 	public int getUserId() {
 		return userId;
 	}

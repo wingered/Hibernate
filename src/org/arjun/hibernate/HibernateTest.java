@@ -34,6 +34,20 @@ public class HibernateTest {
 		session.save(user);
 		
 		session.getTransaction().commit();
+		session.close();
+		
+		user = null;
+		
+		//this this point we have created a modle object and populated it and saved it in
+		//postgres database
+		//now lets retrieve that object back form database
+		
+		session = sessionFactory.openSession();
+		session.beginTransaction();
+		user = (UserDetails)session.get(UserDetails.class, 1);
+		//now we got the object
+		System.out.println("The object retrieved from the database is "+user.getUserName());
+		
 		
 		
 	}

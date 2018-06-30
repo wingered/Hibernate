@@ -11,19 +11,18 @@ import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 //import javax.persistence.Table;
 
-@Entity 
+@Entity
 public class UserDetails {
 
 	@Id
 	private int userId;
 	private String userName;
-	@Temporal(TemporalType.DATE)
+
 	private Date joinDate;
 	private String address;
-	@Lob
+
 	private String description;
-	
-	
+
 	public Date getJoinDate() {
 		return joinDate;
 	}
@@ -56,9 +55,8 @@ public class UserDetails {
 		this.userId = userId;
 	}
 
-	
 	public String getUserName() {
-		return userName + "Saligomula";
+		return userName + " Saligomula";
 	}
 
 	public void setUserName(String userName) {

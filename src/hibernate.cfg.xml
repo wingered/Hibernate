@@ -26,6 +26,6 @@
 		<property name="format_sql">true</property> <!-- Show SQL formatted -->
 		
 		<mapping class="org.arjun.dto.UserDetails"/>
-		
+		<mapping class="org.arjun.dto.Vehicle"/>
 	</session-factory>
 </hibernate-configuration>
